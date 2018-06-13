@@ -8,18 +8,82 @@
 
 import UIKit
 
-class TrendsViewController: UIViewController {
+class TrendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate {
 
+    // MARK: - Properties
+    let searchController = UISearchController(searchResultsController: nil)
+
+    // MARK: - IBOutlets
+    @IBOutlet var tableView: UITableView!
+    
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.initSearchBar()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    fileprivate func initSearchBar() {
+        
+        // Setup the Search Controller
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search Projects"
+        navigationItem.searchController = self.searchController
+        definesPresentationContext = true
+        
+        // Setup the Scope Bar
+        self.searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+        self.searchController.searchBar.delegate = self
     }
+    
+    
+    
+    // MARK: - Table View
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if isFiltering() {
+//            searchFooter.setIsFilteringToShow(filteredItemCount: filteredCandies.count, of: candies.count)
+//            return filteredCandies.count
+//        }
+//
+//        searchFooter.setNotFiltering()
+//        return candies.count
+        
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendsTableViewCell", for: indexPath)
+//        let candy: Candy
+//        if isFiltering() {
+//            candy = filteredCandies[indexPath.row]
+//        } else {
+//            candy = candies[indexPath.row]
+//        }
+//        cell.textLabel!.text = candy.name
+//        cell.detailTextLabel!.text = candy.category
+        return cell
+    }
+}
 
+extension TrendsViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
 
+extension TrendsViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+//        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+//        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
 }
 

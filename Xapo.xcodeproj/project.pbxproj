@@ -13,6 +13,7 @@
 		285469A620D169DC00342C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285469A520D169DC00342C55 /* Assets.xcassets */; };
 		285469A920D169DC00342C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285469A720D169DC00342C55 /* LaunchScreen.storyboard */; };
 		285469B620D16DFE00342C55 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285469B520D16DFE00342C55 /* Project.swift */; };
+		285469B920D1736E00342C55 /* TrendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285469B820D1736E00342C55 /* TrendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		285469A820D169DC00342C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		285469AA20D169DC00342C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285469B520D16DFE00342C55 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		285469B820D1736E00342C55 /* TrendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		285469B220D16A8400342C55 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				285469B720D1732800342C55 /* Trends */,
 			);
 			path = View;
 			sourceTree = SOURCE_ROOT;
@@ -106,6 +109,14 @@
 			);
 			path = Services;
 			sourceTree = SOURCE_ROOT;
+		};
+		285469B720D1732800342C55 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				285469B820D1736E00342C55 /* TrendsTableViewCell.swift */,
+			);
+			path = Trends;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -181,6 +192,7 @@
 				285469A120D169DA00342C55 /* TrendsViewController.swift in Sources */,
 				2854699F20D169DA00342C55 /* AppDelegate.swift in Sources */,
 				285469B620D16DFE00342C55 /* Project.swift in Sources */,
+				285469B920D1736E00342C55 /* TrendsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
