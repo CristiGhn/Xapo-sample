@@ -12,6 +12,7 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
 
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
+    var projects: Array<Project>?
 
     // MARK: - IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -79,7 +80,8 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
 extension TrendsViewController: RSSManagerDelegate {
     // MARK: - RSSReaderDelegate
     func rssReady(items: Array<Project>?) {
-            
+        self.projects = items
+        self.tableView.reloadData()
     }
 }
 
