@@ -36,7 +36,6 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
         definesPresentationContext = true
         
         // Setup the Scope Bar
-        self.searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
         self.searchController.searchBar.delegate = self
     }
     
@@ -52,27 +51,24 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if isFiltering() {
-//            searchFooter.setIsFilteringToShow(filteredItemCount: filteredCandies.count, of: candies.count)
-//            return filteredCandies.count
-//        }
-//
-//        searchFooter.setNotFiltering()
-//        return candies.count
         
-        return 3
+        if self.projects != nil {
+            return (self.projects?.count)!
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendsTableViewCell", for: indexPath)
-//        let candy: Candy
-//        if isFiltering() {
-//            candy = filteredCandies[indexPath.row]
-//        } else {
-//            candy = candies[indexPath.row]
-//        }
-//        cell.textLabel!.text = candy.name
-//        cell.detailTextLabel!.text = candy.category
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendsTableViewCell", for: indexPath) as! TrendsTableViewCell
+
+        if let project = self.projects?[indexPath.row] {
+         
+            cell.titleTextLabel.text = project.title
+            cell.linkTextLabel.text = project.link?.absoluteString
+            cell.descriptionTextLabel.text = project.projectDescription
+        }
+        
         return cell
     }
 }
