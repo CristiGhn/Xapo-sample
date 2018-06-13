@@ -1,5 +1,5 @@
 //
-//  Project.swift
+//  Constants.swift
 //  Xapo
 //
 //  Created by Cristian Florin Ghinea on 13/06/2018.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-final class Project {
-    
-    var title: String?
-    var link: URL?
-    var projectDescription: String?
+public enum ApiURLs: String {
+    case Trends = "https://github-trends.ryotarai.info/rss/github_trends_all_daily.rss"
 }

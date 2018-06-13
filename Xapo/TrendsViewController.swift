@@ -22,6 +22,7 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.initSearchBar()
         
+        self.requestRSS()
     }
     
     fileprivate func initSearchBar() {
@@ -38,7 +39,11 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
         self.searchController.searchBar.delegate = self
     }
     
-    
+    fileprivate func requestRSS() {
+
+        let rssManager = RSSManager(url: ApiURLs.Trends.rawValue, delegate: self)
+        rssManager.start()
+    }
     
     // MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,6 +73,13 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
 //        cell.textLabel!.text = candy.name
 //        cell.detailTextLabel!.text = candy.category
         return cell
+    }
+}
+
+extension TrendsViewController: RSSManagerDelegate {
+    // MARK: - RSSReaderDelegate
+    func rssReady(items: Array<Project>?) {
+            
     }
 }
 
