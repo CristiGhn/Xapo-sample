@@ -100,11 +100,27 @@
                     <navigationItem key="navigationItem" title="Github Trends" id="xzh-2F-vuG"/>
                     <connections>
                         <outlet property="tableView" destination="BaJ-qq-UEl" id="dk6-eV-ohU"/>
+                        <segue destination="vcx-8x-gwb" kind="show" identifier="projectDetailsSegue" id="I7B-ff-ttt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PNQ-Eu-UmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-230" y="-258"/>
+        </scene>
+        <!--Project Details View Controller-->
+        <scene sceneID="zk0-Vo-VcC">
+            <objects>
+                <viewController id="vcx-8x-gwb" customClass="ProjectDetailsViewController" customModule="Xapo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hG1-fh-WpA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2D3-GN-9Bt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDY-7v-gES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663" y="-258"/>
         </scene>
     </scenes>
 </document>

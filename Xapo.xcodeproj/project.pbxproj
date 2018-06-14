@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281A912820D26D01003ED0C6 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */; };
+		281A912A20D26D33003ED0C6 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A912920D26D33003ED0C6 /* TrendsViewController.swift */; };
 		2854699F20D169DA00342C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854699E20D169DA00342C55 /* AppDelegate.swift */; };
-		285469A120D169DA00342C55 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285469A020D169DA00342C55 /* TrendsViewController.swift */; };
 		285469A420D169DA00342C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285469A220D169DA00342C55 /* Main.storyboard */; };
 		285469A620D169DC00342C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285469A520D169DC00342C55 /* Assets.xcassets */; };
 		285469A920D169DC00342C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285469A720D169DC00342C55 /* LaunchScreen.storyboard */; };
@@ -22,9 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
+		281A912920D26D33003ED0C6 /* TrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		2854699B20D169DA00342C55 /* Xapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2854699E20D169DA00342C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		285469A020D169DA00342C55 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		285469A320D169DA00342C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		285469A520D169DC00342C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		285469A820D169DC00342C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 				285469B120D16A8400342C55 /* Extensions */,
 				285469BC20D1790600342C55 /* Library */,
 				2854699E20D169DA00342C55 /* AppDelegate.swift */,
-				285469A020D169DA00342C55 /* TrendsViewController.swift */,
 				285469A520D169DC00342C55 /* Assets.xcassets */,
 				285469A720D169DC00342C55 /* LaunchScreen.storyboard */,
 				285469AA20D169DC00342C55 /* Info.plist */,
@@ -129,7 +130,9 @@
 		285469B720D1732800342C55 /* Trends */ = {
 			isa = PBXGroup;
 			children = (
+				281A912920D26D33003ED0C6 /* TrendsViewController.swift */,
 				285469B820D1736E00342C55 /* TrendsTableViewCell.swift */,
+				281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */,
 			);
 			path = Trends;
 			sourceTree = "<group>";
@@ -233,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285469A120D169DA00342C55 /* TrendsViewController.swift in Sources */,
 				285469BF20D1791400342C55 /* SWXMLHash.swift in Sources */,
 				2854699F20D169DA00342C55 /* AppDelegate.swift in Sources */,
 				285469BB20D1784C00342C55 /* RSSManager.swift in Sources */,
@@ -242,6 +244,8 @@
 				285469C120D17A3900342C55 /* String+Helpers.swift in Sources */,
 				285469C820D180E000342C55 /* XMLReader.m in Sources */,
 				285469C420D17C1600342C55 /* Constants.swift in Sources */,
+				281A912A20D26D33003ED0C6 /* TrendsViewController.swift in Sources */,
+				281A912820D26D01003ED0C6 /* ProjectDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
