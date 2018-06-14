@@ -15,7 +15,8 @@ class TrendsViewController: UIViewController {
     var projects: Array<Project>?
     var filteredProjects: Array<Project>?
     var selectedProject: Project?
-
+    var alert = UIAlertController(title: "Please wait while we download the repos", message: "\r\r", preferredStyle: .alert)
+    
     // MARK: - IBOutlets
     @IBOutlet var tableView: UITableView!
     
@@ -23,9 +24,28 @@ class TrendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initAlert()
+        
         self.initSearchBar()
         
         self.requestRSS()
+    }
+    
+    fileprivate func initAlert() {
+        
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        indicator.frame = CGRect(x: 0,
+                                 y: 30,
+                                 width: self.alert.view.bounds.width,
+                                 height: self.alert.view.bounds.height)
+        indicator.tintColor = UIColor.black
+        indicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.alert.view.addSubview(indicator)
+        indicator.isUserInteractionEnabled = false
+        indicator.startAnimating()
+        
+        self.present(self.alert, animated: true, completion: nil)
     }
     
     fileprivate func initSearchBar() {
@@ -86,9 +106,14 @@ extension TrendsViewController: UITableViewDelegate {
 extension TrendsViewController: RSSManagerDelegate {
     // MARK: - RSSReaderDelegate
     func rssReady(items: Array<Project>?) {
+        
         self.projects = items
         self.filteredProjects = items
         self.tableView.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.alert .dismiss(animated: true, completion: nil)
+        }
     }
 }
 
