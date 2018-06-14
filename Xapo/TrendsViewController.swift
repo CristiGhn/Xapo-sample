@@ -8,11 +8,12 @@
 
 import UIKit
 
-class TrendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate {
+class TrendsViewController: UIViewController {
 
     // MARK: - Properties
     let searchController = UISearchController(searchResultsController: nil)
     var projects: Array<Project>?
+    var filteredProjects: Array<Project>?
 
     // MARK: - IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -34,9 +35,6 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
         self.searchController.searchBar.placeholder = "Search Projects"
         navigationItem.searchController = self.searchController
         definesPresentationContext = true
-        
-        // Setup the Scope Bar
-        self.searchController.searchBar.delegate = self
     }
     
     fileprivate func requestRSS() {
@@ -44,16 +42,19 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
         let rssManager = RSSManager(url: ApiURLs.Trends.rawValue, delegate: self)
         rssManager.start()
     }
+}
+
+extension TrendsViewController: UITableViewDataSource {
     
-    // MARK: - Table View
+    // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.projects != nil {
-            return (self.projects?.count)!
+        if self.filteredProjects != nil {
+            return (self.filteredProjects?.count)!
         } else {
             return 0
         }
@@ -61,15 +62,22 @@ class TrendsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrendsTableViewCell", for: indexPath) as! TrendsTableViewCell
-
-        if let project = self.projects?[indexPath.row] {
-         
-            cell.titleTextLabel.text = project.title
-            cell.linkTextLabel.text = project.link?.absoluteString
-            cell.descriptionTextLabel.text = project.projectDescription
+        
+        if let project = self.filteredProjects?[indexPath.row] {
+            
+            cell.titleTextLabel.text = "\(project.title ?? "")"
+            cell.linkTextLabel.text = "\(project.link?.absoluteString ?? "")"
+            cell.descriptionTextLabel.text = "Description:\r \(project.projectDescription ?? "")"
         }
         
         return cell
+    }
+}
+
+extension TrendsViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 
@@ -77,23 +85,32 @@ extension TrendsViewController: RSSManagerDelegate {
     // MARK: - RSSReaderDelegate
     func rssReady(items: Array<Project>?) {
         self.projects = items
+        self.filteredProjects = items
         self.tableView.reloadData()
-    }
-}
-
-extension TrendsViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }
 
 extension TrendsViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-//        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-//        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        self.filteredProjects = self.projects?.filter({( project : Project) -> Bool in
+          
+            if !searchBarIsEmpty() {
+                return project.title!.lowercased().contains(searchText.lowercased());
+            } else {
+                return true
+            }
+        })
+        
+        self.tableView.reloadData()
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
     }
 }
 
