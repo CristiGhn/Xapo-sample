@@ -10,11 +10,25 @@ import UIKit
 
 class ProjectDetailsViewController: UIViewController {
 
+    // MARK: - Properties
     var project: Project?
+    
+    // MARK: - IBOutlets
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var ratingContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(project?.title)
+        self.inits()
+    }
+    
+    fileprivate func inits() {
+        
+        self.title = project?.title
+        self.descriptionLabel.text = project?.projectDescription
+        
+        self.ratingContainerView.layer.borderColor = XapoColors.Brand.cgColor
+        self.ratingContainerView.layer.borderWidth = 1.0
     }
 }

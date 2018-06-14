@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 public enum ApiURLs: String {
     case Trends = "https://github-trends.ryotarai.info/rss/github_trends_all_daily.rss"
+}
+
+public struct XapoColors {
+    static let Brand = UIColor(red:0.37, green:0.48, blue:0.53, alpha:1.00)
 }

@@ -131,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				281A912920D26D33003ED0C6 /* TrendsViewController.swift */,
-				285469B820D1736E00342C55 /* TrendsTableViewCell.swift */,
 				281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */,
+				285469B820D1736E00342C55 /* TrendsTableViewCell.swift */,
 			);
 			path = Trends;
 			sourceTree = "<group>";
