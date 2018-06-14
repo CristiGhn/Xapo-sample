@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		281A912820D26D01003ED0C6 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */; };
 		281A912A20D26D33003ED0C6 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A912920D26D33003ED0C6 /* TrendsViewController.swift */; };
+		281A913220D28849003ED0C6 /* XapoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A913120D28849003ED0C6 /* XapoTests.swift */; };
+		281A913A20D28B88003ED0C6 /* RepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A913920D28B88003ED0C6 /* RepoTests.swift */; };
 		2854699F20D169DA00342C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854699E20D169DA00342C55 /* AppDelegate.swift */; };
 		285469A420D169DA00342C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285469A220D169DA00342C55 /* Main.storyboard */; };
 		285469A620D169DC00342C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285469A520D169DC00342C55 /* Assets.xcassets */; };
@@ -23,9 +25,23 @@
 		B94BF668F1A1976EBD2951C9 /* Pods_Xapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903E1218FB3C3EB8B8CF64D5 /* Pods_Xapo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		281A913420D28849003ED0C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2854699320D169DA00342C55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2854699A20D169DA00342C55;
+			remoteInfo = Xapo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		281A912720D26D01003ED0C6 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		281A912920D26D33003ED0C6 /* TrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		281A912F20D28848003ED0C6 /* XapoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XapoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		281A913120D28849003ED0C6 /* XapoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XapoTests.swift; sourceTree = "<group>"; };
+		281A913320D28849003ED0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		281A913920D28B88003ED0C6 /* RepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTests.swift; sourceTree = "<group>"; };
 		2854699B20D169DA00342C55 /* Xapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2854699E20D169DA00342C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		285469A320D169DA00342C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		281A912C20D28848003ED0C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2854699820D169DA00342C55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,10 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281A913020D28849003ED0C6 /* XapoTests */ = {
+			isa = PBXGroup;
+			children = (
+				281A913120D28849003ED0C6 /* XapoTests.swift */,
+				281A913920D28B88003ED0C6 /* RepoTests.swift */,
+				281A913320D28849003ED0C6 /* Info.plist */,
+			);
+			path = XapoTests;
+			sourceTree = "<group>";
+		};
 		2854699220D169DA00342C55 = {
 			isa = PBXGroup;
 			children = (
 				2854699D20D169DA00342C55 /* Xapo */,
+				281A913020D28849003ED0C6 /* XapoTests */,
 				2854699C20D169DA00342C55 /* Products */,
 				955023AACF3EAEF83879DA10 /* Pods */,
 				B2363BF8A20170192C86772C /* Frameworks */,
@@ -72,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2854699B20D169DA00342C55 /* Xapo.app */,
+				281A912F20D28848003ED0C6 /* XapoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +226,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		281A912E20D28848003ED0C6 /* XapoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 281A913820D28849003ED0C6 /* Build configuration list for PBXNativeTarget "XapoTests" */;
+			buildPhases = (
+				281A912B20D28848003ED0C6 /* Sources */,
+				281A912C20D28848003ED0C6 /* Frameworks */,
+				281A912D20D28848003ED0C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				281A913520D28849003ED0C6 /* PBXTargetDependency */,
+			);
+			name = XapoTests;
+			productName = XapoTests;
+			productReference = 281A912F20D28848003ED0C6 /* XapoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2854699A20D169DA00342C55 /* Xapo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 285469AD20D169DC00342C55 /* Build configuration list for PBXNativeTarget "Xapo" */;
@@ -220,6 +273,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Cristian Florin Ghinea";
 				TargetAttributes = {
+					281A912E20D28848003ED0C6 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 2854699A20D169DA00342C55;
+					};
 					2854699A20D169DA00342C55 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 0940;
@@ -240,11 +297,19 @@
 			projectRoot = "";
 			targets = (
 				2854699A20D169DA00342C55 /* Xapo */,
+				281A912E20D28848003ED0C6 /* XapoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		281A912D20D28848003ED0C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2854699920D169DA00342C55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +366,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		281A912B20D28848003ED0C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				281A913220D28849003ED0C6 /* XapoTests.swift in Sources */,
+				281A913A20D28B88003ED0C6 /* RepoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2854699720D169DA00342C55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +393,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		281A913520D28849003ED0C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2854699A20D169DA00342C55 /* Xapo */;
+			targetProxy = 281A913420D28849003ED0C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		285469A220D169DA00342C55 /* Main.storyboard */ = {
@@ -340,6 +422,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		281A913620D28849003ED0C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N9A3EZJ753;
+				INFOPLIST_FILE = XapoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.XapoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xapo.app/Xapo";
+			};
+			name = Debug;
+		};
+		281A913720D28849003ED0C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N9A3EZJ753;
+				INFOPLIST_FILE = XapoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.XapoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xapo.app/Xapo";
+			};
+			name = Release;
+		};
 		285469AB20D169DC00342C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -464,7 +586,10 @@
 				DEVELOPMENT_TEAM = N9A3EZJ753;
 				INFOPLIST_FILE = Xapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.Xapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Classes/Xapo-Bridging-Header.h";
@@ -484,7 +609,10 @@
 				DEVELOPMENT_TEAM = N9A3EZJ753;
 				INFOPLIST_FILE = Xapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.Xapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Classes/Xapo-Bridging-Header.h";
@@ -496,6 +624,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		281A913820D28849003ED0C6 /* Build configuration list for PBXNativeTarget "XapoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				281A913620D28849003ED0C6 /* Debug */,
+				281A913720D28849003ED0C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2854699620D169DA00342C55 /* Build configuration list for PBXProject "Xapo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
