@@ -20,6 +20,7 @@
 		285469C120D17A3900342C55 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285469C020D17A3900342C55 /* String+Helpers.swift */; };
 		285469C420D17C1600342C55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285469C320D17C1600342C55 /* Constants.swift */; };
 		285469C820D180E000342C55 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 285469C720D180E000342C55 /* XMLReader.m */; };
+		B94BF668F1A1976EBD2951C9 /* Pods_Xapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903E1218FB3C3EB8B8CF64D5 /* Pods_Xapo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		285469C520D180DF00342C55 /* Xapo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xapo-Bridging-Header.h"; sourceTree = "<group>"; };
 		285469C620D180DF00342C55 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		285469C720D180E000342C55 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		5043631D9D518413004EE810 /* Pods-Xapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xapo/Pods-Xapo.debug.xcconfig"; sourceTree = "<group>"; };
+		903E1218FB3C3EB8B8CF64D5 /* Pods_Xapo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xapo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF319958EC86E7BB6757592A /* Pods-Xapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xapo/Pods-Xapo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94BF668F1A1976EBD2951C9 /* Pods_Xapo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				2854699D20D169DA00342C55 /* Xapo */,
 				2854699C20D169DA00342C55 /* Products */,
+				955023AACF3EAEF83879DA10 /* Pods */,
+				B2363BF8A20170192C86772C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +171,23 @@
 			path = Main;
 			sourceTree = SOURCE_ROOT;
 		};
+		955023AACF3EAEF83879DA10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5043631D9D518413004EE810 /* Pods-Xapo.debug.xcconfig */,
+				AF319958EC86E7BB6757592A /* Pods-Xapo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2363BF8A20170192C86772C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				903E1218FB3C3EB8B8CF64D5 /* Pods_Xapo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 285469AD20D169DC00342C55 /* Build configuration list for PBXNativeTarget "Xapo" */;
 			buildPhases = (
+				369A2CB404FE17CD73FB8708 /* [CP] Check Pods Manifest.lock */,
 				2854699720D169DA00342C55 /* Sources */,
 				2854699820D169DA00342C55 /* Frameworks */,
 				2854699920D169DA00342C55 /* Resources */,
+				991AAAEA309FD478566D9D4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +256,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		369A2CB404FE17CD73FB8708 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Xapo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		991AAAEA309FD478566D9D4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Xapo/Pods-Xapo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xapo/Pods-Xapo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2854699720D169DA00342C55 /* Sources */ = {
@@ -387,6 +456,7 @@
 		};
 		285469AE20D169DC00342C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5043631D9D518413004EE810 /* Pods-Xapo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -394,10 +464,7 @@
 				DEVELOPMENT_TEAM = N9A3EZJ753;
 				INFOPLIST_FILE = Xapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.Xapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Classes/Xapo-Bridging-Header.h";
@@ -409,6 +476,7 @@
 		};
 		285469AF20D169DC00342C55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF319958EC86E7BB6757592A /* Pods-Xapo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -416,10 +484,7 @@
 				DEVELOPMENT_TEAM = N9A3EZJ753;
 				INFOPLIST_FILE = Xapo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xapo.Xapo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Classes/Xapo-Bridging-Header.h";
